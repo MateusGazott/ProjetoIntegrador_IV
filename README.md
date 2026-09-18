@@ -1,5 +1,5 @@
 # ProjetoIntegrador_IV
-# Tema: Previsão de Falencia de Pequenas Empresas
+# Tema: Sistema Inteligente de Previsão de Falência e Diagnóstico Financeiro para Pequenas Empresas
 
 A plataforma opera em duas frentes complementares:
 
