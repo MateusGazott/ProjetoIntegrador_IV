@@ -1,0 +1,407 @@
+{
+  "problema": "Classificação binária de falência empresarial",
+  "alvo": {
+    "coluna_original": "class",
+    "0": "Não falida",
+    "1": "Falida"
+  },
+  "resumo_dados": {
+    "1year.csv": {
+      "tabela_sql": "falencia_1_ano",
+      "registros": 7027,
+      "falidas": 271,
+      "nao_falidas": 6756,
+      "valores_ausentes_atributos_antes_tratamento": 5835
+    },
+    "2year.csv": {
+      "tabela_sql": "falencia_2_ano",
+      "registros": 10173,
+      "falidas": 400,
+      "nao_falidas": 9773,
+      "valores_ausentes_atributos_antes_tratamento": 12157
+    },
+    "3year.csv": {
+      "tabela_sql": "falencia_3_ano",
+      "registros": 10503,
+      "falidas": 495,
+      "nao_falidas": 10008,
+      "valores_ausentes_atributos_antes_tratamento": 9888
+    },
+    "4year.csv": {
+      "tabela_sql": "falencia_4_ano",
+      "registros": 9792,
+      "falidas": 515,
+      "nao_falidas": 9277,
+      "valores_ausentes_atributos_antes_tratamento": 8776
+    },
+    "5year.csv": {
+      "tabela_sql": "falencia_5_ano",
+      "registros": 5910,
+      "falidas": 410,
+      "nao_falidas": 5500,
+      "valores_ausentes_atributos_antes_tratamento": 4666
+    },
+    "consolidado": {
+      "registros_antes_remocao_duplicatas": 43405,
+      "duplicatas_removidas": 401,
+      "registros_finais": 43004,
+      "falidas": 2083,
+      "nao_falidas": 40921,
+      "percentual_falidas": 4.8437,
+      "total_ausentes_nos_atributos": 41037
+    }
+  },
+  "divisao": {
+    "treino": 25802,
+    "validacao": 8601,
+    "teste": 8601,
+    "total_sem_duplicatas": 43004,
+    "proporcao_treino_validacao_teste": "60% / 20% / 20%",
+    "random_state": 42
+  },
+  "metodo_selecao_atributos": "Top 20 por correlação absoluta de Pearson com o alvo, calculada apenas no treino",
+  "atributos_selecionados": [
+    "Attr29",
+    "Attr3",
+    "Attr51",
+    "Attr6",
+    "Attr2",
+    "Attr1",
+    "Attr25",
+    "Attr35",
+    "Attr48",
+    "Attr55",
+    "Attr11",
+    "Attr24",
+    "Attr22",
+    "Attr57",
+    "Attr18",
+    "Attr14",
+    "Attr7",
+    "Attr10",
+    "Attr38",
+    "Attr5"
+  ],
+  "ranking_correlacao_treino": {
+    "Attr29": 0.0566771056596787,
+    "Attr3": 0.042331337441790774,
+    "Attr51": 0.041886246647239195,
+    "Attr6": 0.041202092349585745,
+    "Attr2": 0.03972266069116651,
+    "Attr1": 0.029616314700707056,
+    "Attr25": 0.020409453577938504,
+    "Attr35": 0.019926239582745364,
+    "Attr48": 0.01971520842342378,
+    "Attr55": 0.018413845741223372,
+    "Attr11": 0.018030648908117383,
+    "Attr24": 0.01786494003240829,
+    "Attr22": 0.01776772295598143,
+    "Attr57": 0.017340179433101708,
+    "Attr18": 0.016423294004266117,
+    "Attr14": 0.016276861608684207,
+    "Attr7": 0.016276410609159384,
+    "Attr10": 0.015342121053722122,
+    "Attr38": 0.015179264715947107,
+    "Attr5": 0.013641982561078531,
+    "Attr12": 0.008041995379421319,
+    "Attr27": 0.006739679750685689,
+    "Attr16": 0.004625402344325678,
+    "Attr15": 0.004214894336849493,
+    "Attr28": 0.003994257344784553,
+    "Attr26": 0.003752782815009563,
+    "Attr33": 0.003519653499791398,
+    "Attr37": 0.0032232944293290725,
+    "Attr17": 0.003081055282286717,
+    "Attr8": 0.0030330683800378656,
+    "Attr53": 0.002928127284383867,
+    "Attr9": 0.002863648929684031,
+    "Attr54": 0.002781339295913594,
+    "Attr44": 0.0026977037581147945,
+    "Attr43": 0.0026245518035260583,
+    "Attr21": 0.002623468673970995,
+    "Attr32": 0.002570090218802978,
+    "Attr13": 0.002425891206243019,
+    "Attr47": 0.00234452358844802,
+    "Attr60": 0.0022535833277229954,
+    "Attr58": 0.0022324364323213926,
+    "Attr50": 0.0021761802925670125,
+    "Attr52": 0.001978034213058329,
+    "Attr64": 0.0019400190570722405,
+    "Attr56": 0.0018567200217110686,
+    "Attr46": 0.0018557097390693444,
+    "Attr59": 0.0017604466468507354,
+    "Attr4": 0.0017202561915151075,
+    "Attr61": 0.0016295189615679734,
+    "Attr41": 0.0015398000852474246,
+    "Attr62": 0.001484545281220566,
+    "Attr45": 0.0008565960855190676,
+    "Attr49": 0.0007150973393671729,
+    "Attr20": 0.0006629458391301735,
+    "Attr42": 0.0005987292390431747,
+    "Attr19": 0.0005617141604116601,
+    "Attr23": 0.00047052455739153554,
+    "Attr40": 0.0004051546906897427,
+    "Attr31": 0.0002379104786150154,
+    "Attr34": 0.00018466339953957393,
+    "Attr30": 0.0001670196194537301,
+    "Attr39": 5.7614105065255975e-05,
+    "Attr63": 5.0682641291097164e-05,
+    "Attr36": 9.501948638509765e-07
+  },
+  "resultados_validacao": {
+    "Random Forest": {
+      "limiar": 0.53,
+      "acuracia": 0.8941983490291826,
+      "precisao_falencia": 0.23001095290251916,
+      "recall_falencia": 0.5035971223021583,
+      "f1_falencia": 0.3157894736842105,
+      "roc_auc": 0.847699845988312,
+      "average_precision": 0.24003193600722694,
+      "tn": 7481,
+      "fp": 703,
+      "fn": 207,
+      "tp": 210,
+      "matriz_confusao": [
+        [
+          7481,
+          703
+        ],
+        [
+          207,
+          210
+        ]
+      ],
+      "classification_report": {
+        "Não falida": {
+          "precision": 0.9730749219562955,
+          "recall": 0.9141006842619745,
+          "f1-score": 0.9426663306451613,
+          "support": 8184.0
+        },
+        "Falida": {
+          "precision": 0.23001095290251916,
+          "recall": 0.5035971223021583,
+          "f1-score": 0.3157894736842105,
+          "support": 417.0
+        },
+        "accuracy": 0.8941983490291826,
+        "macro avg": {
+          "precision": 0.6015429374294073,
+          "recall": 0.7088489032820664,
+          "f1-score": 0.6292279021646858,
+          "support": 8601.0
+        },
+        "weighted avg": {
+          "precision": 0.93704914877929,
+          "recall": 0.8941983490291826,
+          "f1-score": 0.912273626383713,
+          "support": 8601.0
+        }
+      },
+      "limiar_otimizado_na_validacao": {
+        "limiar": 0.53,
+        "precision": 0.23001095290251916,
+        "recall": 0.5035971223021583,
+        "f1": 0.3157894736842105
+      }
+    },
+    "XGBoost": {
+      "limiar": 0.66,
+      "acuracia": 0.8789675619114057,
+      "precisao_falencia": 0.19471624266144813,
+      "recall_falencia": 0.47721822541966424,
+      "f1_falencia": 0.27658095899930507,
+      "roc_auc": 0.8172312589810851,
+      "average_precision": 0.19065519742146755,
+      "tn": 7361,
+      "fp": 823,
+      "fn": 218,
+      "tp": 199,
+      "matriz_confusao": [
+        [
+          7361,
+          823
+        ],
+        [
+          218,
+          199
+        ]
+      ],
+      "classification_report": {
+        "Não falida": {
+          "precision": 0.9712363108589523,
+          "recall": 0.8994379276637341,
+          "f1-score": 0.9339592717122375,
+          "support": 8184.0
+        },
+        "Falida": {
+          "precision": 0.19471624266144813,
+          "recall": 0.47721822541966424,
+          "f1-score": 0.27658095899930507,
+          "support": 417.0
+        },
+        "accuracy": 0.8789675619114057,
+        "macro avg": {
+          "precision": 0.5829762767602003,
+          "recall": 0.6883280765416991,
+          "f1-score": 0.6052701153557712,
+          "support": 8601.0
+        },
+        "weighted avg": {
+          "precision": 0.9335884945075561,
+          "recall": 0.8789675619114057,
+          "f1-score": 0.902087773467697,
+          "support": 8601.0
+        }
+      },
+      "limiar_otimizado_na_validacao": {
+        "limiar": 0.66,
+        "precision": 0.19471624266144813,
+        "recall": 0.47721822541966424,
+        "f1": 0.27658095899930507
+      }
+    }
+  },
+  "resultados_teste": {
+    "Random Forest": {
+      "limiar": 0.53,
+      "acuracia": 0.8705964422741541,
+      "precisao_falencia": 0.1881720430107527,
+      "recall_falencia": 0.5035971223021583,
+      "f1_falencia": 0.273972602739726,
+      "roc_auc": 0.8227952828353154,
+      "average_precision": 0.19831768101559252,
+      "tn": 7278,
+      "fp": 906,
+      "fn": 207,
+      "tp": 210,
+      "matriz_confusao": [
+        [
+          7278,
+          906
+        ],
+        [
+          207,
+          210
+        ]
+      ],
+      "classification_report": {
+        "Não falida": {
+          "precision": 0.9723446893787575,
+          "recall": 0.8892961876832844,
+          "f1-score": 0.9289680260386751,
+          "support": 8184.0
+        },
+        "Falida": {
+          "precision": 0.1881720430107527,
+          "recall": 0.5035971223021583,
+          "f1-score": 0.273972602739726,
+          "support": 417.0
+        },
+        "accuracy": 0.8705964422741541,
+        "macro avg": {
+          "precision": 0.5802583661947551,
+          "recall": 0.6964466549927213,
+          "f1-score": 0.6014703143892006,
+          "support": 8601.0
+        },
+        "weighted avg": {
+          "precision": 0.9343258551111773,
+          "recall": 0.8705964422741541,
+          "f1-score": 0.8972120567890923,
+          "support": 8601.0
+        }
+      }
+    },
+    "XGBoost": {
+      "limiar": 0.66,
+      "acuracia": 0.8690849901174282,
+      "precisao_falencia": 0.18149146451033243,
+      "recall_falencia": 0.4844124700239808,
+      "f1_falencia": 0.26405228758169935,
+      "roc_auc": 0.8007567552995726,
+      "average_precision": 0.15664036979768758,
+      "tn": 7273,
+      "fp": 911,
+      "fn": 215,
+      "tp": 202,
+      "matriz_confusao": [
+        [
+          7273,
+          911
+        ],
+        [
+          215,
+          202
+        ]
+      ],
+      "classification_report": {
+        "Não falida": {
+          "precision": 0.9712873931623932,
+          "recall": 0.8886852394916911,
+          "f1-score": 0.9281521184277692,
+          "support": 8184.0
+        },
+        "Falida": {
+          "precision": 0.18149146451033243,
+          "recall": 0.4844124700239808,
+          "f1-score": 0.26405228758169935,
+          "support": 417.0
+        },
+        "accuracy": 0.8690849901174282,
+        "macro avg": {
+          "precision": 0.5763894288363628,
+          "recall": 0.686548854757836,
+          "f1-score": 0.5961022030047343,
+          "support": 8601.0
+        },
+        "weighted avg": {
+          "precision": 0.9329959267924468,
+          "recall": 0.8690849901174282,
+          "f1-score": 0.895954742603701,
+          "support": 8601.0
+        }
+      }
+    }
+  },
+  "melhor_modelo_selecionado": "Random Forest",
+  "limiar_final": 0.53,
+  "matriz_confusao_teste_modelo_escolhido": [
+    [
+      7278,
+      906
+    ],
+    [
+      207,
+      210
+    ]
+  ],
+  "classification_report_teste_modelo_escolhido": {
+    "Não falida": {
+      "precision": 0.9723446893787575,
+      "recall": 0.8892961876832844,
+      "f1-score": 0.9289680260386751,
+      "support": 8184.0
+    },
+    "Falida": {
+      "precision": 0.1881720430107527,
+      "recall": 0.5035971223021583,
+      "f1-score": 0.273972602739726,
+      "support": 417.0
+    },
+    "accuracy": 0.8705964422741541,
+    "macro avg": {
+      "precision": 0.5802583661947551,
+      "recall": 0.6964466549927213,
+      "f1-score": 0.6014703143892006,
+      "support": 8601.0
+    },
+    "weighted avg": {
+      "precision": 0.9343258551111773,
+      "recall": 0.8705964422741541,
+      "f1-score": 0.8972120567890923,
+      "support": 8601.0
+    }
+  },
+  "observacao": "As métricas de teste usam modelos treinados em 80% dos dados. O arquivo modelo_falencia.joblib é então retreinado com 100% dos dados para uso no sistema."
+}
