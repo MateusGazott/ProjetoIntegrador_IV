@@ -1,12 +1,43 @@
-# ProjetoIntegrador_IV
-# Tema: Sistema Inteligente de Previsão de Falência e Diagnóstico Financeiro para Pequenas Empresas
+# Integrante 3 — Integração da API da Groq (LLM)
 
-A plataforma opera em duas frentes complementares:
+## Visão Geral
+Este módulo implementa a comunicação com a API da **Groq**, fornecendo inteligência contextualizada para explicar o diagnóstico financeiro gerado pelo modelo preditivo em linguagem acessível e propor planos de ação preventivos.
 
-1. **Atuação Direta (Modelo Preditivo Tabular):** Um algoritmo de Machine Learning supervisionado processa os indicadores financeiros quantitativos do usuário (faturamento, despesas, passivos, capital de giro) para calcular uma probabilidade estatística exata e objetiva do risco de insolvência.
-2. **Atuação Indireta (Copiloto de Consultoria via LLM):** Uma LLM integrando técnicas de RAG (via API do GroqCloud) recebe o diagnóstico numérico e o contexto do usuário para traduzir a análise técnica em linguagem clara, gerando planos de ação preventivos e orientações estratégicas acessíveis.
+---
 
-### IA 
-- **Privacidade (LGPD):** O processamento de dados é realizado de forma anonimizada, sem necessidade de envio de dados identificáveis (como CNPJ, Razão Social ou nomes) para a LLM.
-- **Segurança:** Conta com sanitização de entradas contra ataques de *Prompt Injection*.
-- **Transparência:** O sistema atua como uma ferramenta de apoio à decisão, sem substituir auditorias ou consultorias contábeis formais.
+## 1. Configuração e Modelos Utilizados
+- **Provedor:** Groq Cloud API (`https://api.groq.com`)
+- **Modelos Homologados:**
+  - `llama-3.3-70b-versatile`: Modelo principal de alta precisão analítica e raciocínio financeiro.
+  - `llama-3.1-8b-instant`: Modelo secundário de fallback com resposta ultrarrápida.
+- **Variável de Ambiente:** `GROQ_API_KEY` (chave protegida, nunca versionada no código).
+
+---
+
+## 2. Engenharia de Prompt Especializada
+O sistema utiliza um System Prompt configurado como um Consultor Sênior em Turnaround e Gestão de Riscos (FinGuard AI):
+- Traduz indicadores contábeis complexos para a realidade do empresário de PME.
+- Identifica causas-raiz com base nos pontos de atenção do diagnóstico (`resumoParaPromptLLM`).
+- Sugere planos de mitigação imediatos: recomposição de capital de giro, escalonamento de passivos de curto prazo e estancamento de sangrias operacionais.
+- Adiciona avisos éticos e legais reforçando o papel de apoio preventivo sem substituir a consultoria contábil habilitada.
+
+---
+
+## 3. Contrato da Função
+```python
+def gerar_orientacao(
+    mensagem_usuario: str,
+    resumo_diagnostico: str,
+    historico: list[dict]
+) -> str:
+    ...
+```
+
+---
+
+## 4. Testes do Módulo
+Execute os testes unitários com:
+```bash
+python test_groq.py
+```
+**Resultado:** 5/5 testes aprovados (validações, prompts, tratamento de erros e fallback).
