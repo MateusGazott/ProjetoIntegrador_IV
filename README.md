@@ -6,7 +6,7 @@ Sistema inteligente para detecção precoce de risco de insolvência e falência
 
 ## 👥 Divisão de Responsabilidades e Entregas dos Integrantes
 
-### 🔹 Integrante 1 — Treinamento do Modelo Tabular (Mateus)
+### 🔹 Integrante 1 — Treinamento do Modelo Tabular 
 - **Localização:** `01_Treinamento_Modelo_Tabular/`
 - **Atividades:**
   - Carregamento e consolidação dos dados de 1 a 5 anos (43.405 registros).
