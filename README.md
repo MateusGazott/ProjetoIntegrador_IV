@@ -104,7 +104,7 @@ python executar_todos_os_testes.py
 ## 📁 Estrutura de Pastas do Repositório
 
 ```
-├── 01_Treinamento_Modelo_Tabular/        # Integrante 1 (Mateus - ML)
+├── 01_Treinamento_Modelo_Tabular/        # Integrante 1 (ML)
 │   ├── dados/                           # Arquivos 1year.csv a 5year.csv
 │   ├── treinar_modelos.py               # Pipeline completo de treino e comparação
 │   ├── Treinamento_e_Comparacao_Modelos.ipynb # Notebook executado com gráficos
